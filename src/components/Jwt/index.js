@@ -24,6 +24,18 @@ export class Jwt extends React.Component {
 			}),
 		}));
 	}
+	
+	addJwt = () => {
+		this.setState(({ jwts }) => ({
+			jwts: [
+				...jwts,
+				{
+					id: uuid(),
+					value: '',
+				},
+			],
+		}));
+	}
 
 	render () {
 		const { jwts } = this.state;
@@ -39,6 +51,7 @@ export class Jwt extends React.Component {
 						</div>
 					</div>
 				))}
+				<a href="#" onClick={this.addJwt}>Add another</a>
 			</div>
 		);
 	}
