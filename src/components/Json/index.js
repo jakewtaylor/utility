@@ -4,16 +4,16 @@ export class Json extends Component {
   getColor = (type) => {
     switch (type) {
       case 'number':
-      case 'null':
-        return 'darkorange';
+        return '#B15534';
       case 'key':
-        return 'darkslategrey';
+        return '#D44A3E';
       case 'string':
-        return 'darkorchid';
+        return '#96B753';
+      case 'null':
       case 'boolean':
-        return 'dodgeblue';
+        return '#56B6C2';
       default:
-        return 'auto';
+        return '#ABB2BF';
     }
   }
   
@@ -45,7 +45,7 @@ export class Json extends Component {
     const parsed = this.parse(json);
     
     return (
-      <pre dangerouslySetInnerHTML={{ __html: parsed }} />
+      <pre style={{ fontSize: 16, fontWeight: 'bold', color: '#ABB2BF' }} dangerouslySetInnerHTML={{ __html: parsed }} />
     );
   }
 }

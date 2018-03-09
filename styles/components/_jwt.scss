@@ -1,0 +1,28 @@
+.jwts {
+	height: 100%;
+	width: 100%;
+
+	.jwt {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items: stretch;
+		
+		.input, .inspector {
+			padding: 0.5em;
+		}
+		
+		.input {
+			height: 100%;
+			
+			textarea {
+				height: 100%;
+				width: 100%;
+				display: block;
+			}
+		}
+		
+		.inspector {
+			height: 100%;
+		}
+	}
+}
