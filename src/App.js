@@ -17,7 +17,12 @@ export class App extends Component {
 	state = { page: this.sidebarItems[0].value };
 
 	handlePageChange = page => () => this.setState({ page });
-	
+
+	closeClicked = (e) => {
+		e.preventDefault();
+		console.log('close');
+        }
+
 	renderPage () {
 		const { page } = this.state;
 		
@@ -33,6 +38,9 @@ export class App extends Component {
 		const { page } = this.state;
 		return (
 			<div className="app">
+				<header className="header">
+					<a onClick={this.closeClicked}>Close</a>
+				</header>
 				<aside className="sidebar">
 					<ul>
 						{this.sidebarItems.map((item) => (
